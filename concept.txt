@@ -1,0 +1,48 @@
+🛒 Basic E-commerce Website: Core Pages & Features
+🔥 1️⃣ Homepage (Landing Page)
+✅ Hero banner or carousel (big sale, offers)
+✅ Search bar
+✅ Main categories (Electronics, Fashion, Home, etc.)
+✅ Featured sections: Best Sellers, Recommended, New Arrivals
+✅ Footer with links (About, Help, Contact, Socials)
+
+🛍️ 2️⃣ Product Listing Page (PLP) / Category Page
+✅ Grid of products with image, name, price, rating, “Add to Cart” button
+✅ Filters (price, category, brand, rating)
+✅ Sort options (price low to high, popularity, etc.)
+
+Example: /category/electronics
+
+📦 3️⃣ Product Detail Page (PDP)
+✅ Big product image carousel
+✅ Product title, price, description, ratings
+✅ Add to Cart button, Buy Now button
+✅ Related products carousel (optional)
+
+Example: /product/123
+
+🛒 4️⃣ Cart Page
+✅ List of added items with name, price, quantity selector
+✅ Remove item button
+✅ Total price calculation
+✅ Proceed to Checkout button
+
+Example: /cart
+
+💳 5️⃣ Checkout Page
+✅ User info form (name, email, shipping address)
+✅ Payment method selection (dummy for now)
+✅ Order summary
+✅ Place Order button
+
+Example: /checkout
+
+👤 6️⃣ User Account Pages (optional for later)
+✅ Login/Register
+✅ My Orders
+✅ Profile Settings
+
+🔧 7️⃣ Admin Dashboard (optional, advanced)
+✅ Add / Edit / Delete products
+✅ View orders
+✅ Manage users

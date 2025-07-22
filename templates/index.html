@@ -1,158 +1,166 @@
-<!--http://localhost:8000/templates/index.html-->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>MyShop - Landing Page</title>
-
-    <!-- Bootstrap CSS -->
+    <title>MyShop - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Optional custom CSS for hover effects -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="../static/css/custom.css" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">MyShop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">
-                            Cart <span class="badge bg-warning text-dark" id="cart-count">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-2">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">MyShop</a>
+            <form class="d-flex mx-auto w-50">
+                <input class="form-control me-2" type="search" placeholder="Search products">
+                <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart <span class="badge bg-warning text-dark"
+                            id="cart-count">0</span></a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <section class="bg-primary text-white text-center p-5 mb-4">
-        <div class="container">
-            <h1 class="display-4">Welcome to MyShop!</h1>
-            <p class="lead">Discover amazing products at unbeatable prices. Fast, free shipping on all orders!</p>
-            <a href="#product-list" class="btn btn-light btn-lg mt-3">Shop Now</a>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="container mb-5">
-        <h2 class="text-center mb-4">Shop by Category</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card text-center shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200?text=Electronics" class="card-img-top"
-                        alt="Electronics">
-                    <div class="card-body">
-                        <h5 class="card-title">Electronics</h5>
-                        <a href="#" class="btn btn-outline-primary">Explore</a>
-                    </div>
-                </div>
+    <!-- Carousel at top -->
+    <div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../static/images/carousel_banner/carouselbanner1.jpg" class="d-block w-100" alt="Sale">
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-center shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200?text=Fashion" class="card-img-top" alt="Fashion">
-                    <div class="card-body">
-                        <h5 class="card-title">Fashion</h5>
-                        <a href="#" class="btn btn-outline-primary">Explore</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-center shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200?text=Home+Decor" class="card-img-top"
-                        alt="Home Decor">
-                    <div class="card-body">
-                        <h5 class="card-title">Home Decor</h5>
-                        <a href="#" class="btn btn-outline-primary">Explore</a>
-                    </div>
-                </div>
+            <div class="carousel-item">
+                <img src="../static/images/carousel_banner/carouselbanner2.jpg" class="d-block w-100"
+                    alt="New Arrivals">
             </div>
         </div>
-    </section>
-
-    <!-- Bootstrap Alert (hidden by default) -->
-    <div class="container">
-        <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="cart-alert">
-            Item added to cart!
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 
-    <!-- Featured Products -->
-    <section class="container my-4">
-        <h2 class="text-center mb-4">Featured Products</h2>
-        <div class="row" id="product-list">
-
-            <!-- Product 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">$19.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+    <!-- Shop by Category -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Shop by Category</h2>
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/card/electronics.jpg" class="card-img-top" alt="Electronics">
+                    <div class="card-body text-center">
+                        <h6>Electronics</h6>
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100">Explore</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Product 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                        <p class="card-text">$29.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/card/fashion.jpg" class="card-img-top" alt="Fashion">
+                    <div class="card-body text-center">
+                        <h6>Fashion</h6>
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100">Explore</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Product 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-scale">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">$39.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/card/home.jpg" class="card-img-top" alt="Home Decor">
+                    <div class="card-body text-center">
+                        <h6>Home Decor</h6>
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100">Explore</a>
                     </div>
                 </div>
             </div>
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/card/books.jpg" class="card-img-top" alt="Books">
+                    <div class="card-body text-center">
+                        <h6>Books</h6>
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Best Sellers -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Best Sellers</h2>
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/product_cards/product1.jpg" class="card-img-top" alt="Product 1">
+                    <div class="card-body text-center">
+                        <h6>Product 1</h6>
+                        <p class="text-warning">⭐⭐⭐⭐☆</p>
+                        <p>$19.99</p>
+                        <button class="btn btn-warning btn-sm w-100 add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hover-scale h-100">
+                    <img src="../static/images/product_cards/product2.jpg" class="card-img-top" alt="Product 2">
+                    <div class="card-body text-center">
+                        <h6>Product 2</h6>
+                        <p class="text-warning">⭐⭐⭐⭐⭐</p>
+                        <p>$29.99</p>
+                        <button class="btn btn-warning btn-sm w-100 add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <footer class="bg-dark text-white py-4">
         <div class="container">
-            <p>&copy; 2025 MyShop. All rights reserved.</p>
-            <p>
-                <a href="#" class="text-white me-3">About</a>
-                <a href="#" class="text-white me-3">Contact</a>
-                <a href="#" class="text-white">Follow Us</a>
-            </p>
+            <div class="row">
+                <div class="col-md-3">
+                    <h6>Get to Know Us</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Careers</a></li>
+                        <li><a href="#" class="text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Make Money with Us</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Sell on MyShop</a></li>
+                        <li><a href="#" class="text-white">Affiliate Program</a></li>
+                        <li><a href="#" class="text-white">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Help Center</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                        <li><a href="#" class="text-white">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Connect with Us</h6>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center mb-0">&copy; 2025 MyShop. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Your main JavaScript (handles cart count) -->
     <script src="../static/js/main.js"></script>
-
 </body>
 
 </html>
