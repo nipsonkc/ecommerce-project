@@ -1,40 +1,43 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import HomePage from './pages/HomePage'
-import CategoryPage from './pages/CategoryPage'
-import ProductPage from './pages/ProductPage'
-import CartPage from './pages/CartPage'
-import CheckoutPage from './pages/CheckoutPage'
-import OrderConfirmationPage from './pages/OrderConfirmationPage'
-import OrdersPage from './pages/OrdersPage'
-import AccountPage from './pages/AccountPage'
-import LoginPage from './pages/LoginPage'
-import RegisterPage from './pages/RegisterPage'
-import NotFoundPage from './pages/NotFoundPage'
-import ProtectedRoute from './components/ProtectedRoute'
+import HeroSlider from "./components/HeroSlider";
 
-/** App routes + layout shell (Header/Footer). */
 export default function App() {
     return (
-        <div>
-            <Header />
-            <main>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/category/:id" element={<CategoryPage />} />
-                    <Route path="/product/:id" element={<ProductPage />} />
-                    <Route path="/cart" element={<CartPage />} />
-                    <Route path="/checkout" element={<CheckoutPage />} />
-                    <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
-                    <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
-                    <Route path="/account" element={<ProtectedRoute><AccountPage /></ProtectedRoute>} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/register" element={<RegisterPage />} />
-                    <Route path="*" element={<NotFoundPage />} />
-                </Routes>
+        <>
+            <header className="header">
+                <div className="container header-row">
+                    <strong className="brand" style={{ color: "#e5e7eb" }}>Nipson Shop</strong>
+                </div>
+            </header>
+
+            <main className="container" style={{ paddingTop: 16 }}>
+                <HeroSlider />
+
+                <section className="grid cols-3">
+                    {[
+                        "Electronics", "Home & Living", "Beauty & Health",
+                        "Groceries & Food", "Sports & Outdoors", "Automobile & Tools",
+                    ].map((name, i) => (
+                        <div key={i} className="card panel">
+                            <div className="content">
+                                <h3 className="panel-title">{name}</h3>
+                                <div className="panel-grid">
+                                    {[1, 2, 3, 4].map(n => (
+                                        <div key={n} className="panel-cell">
+                                            <div className="panel-thumb" />
+                                            <div className="muted">Item</div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <a className="panel-link" href="#">Explore</a>
+                            </div>
+                        </div>
+                    ))}
+                </section>
             </main>
-            <Footer />
-        </div>
-    )
+
+            <footer className="footer">
+                <div className="container">© {new Date().getFullYear()} Nipson Shop</div>
+            </footer>
+        </>
+    );
 }

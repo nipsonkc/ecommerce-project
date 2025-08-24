@@ -1,20 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import './index.css'
-import CartProvider from './context/CartContext'
-import AuthProvider from './context/AuthContext'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
-/** React entrypoint: wraps App with Auth + Cart providers and Router. */
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootEl = document.getElementById("root");
+if (!rootEl) throw new Error("Missing <div id='root'> in index.html");
+
+ReactDOM.createRoot(rootEl).render(
     <React.StrictMode>
         <BrowserRouter>
-            <AuthProvider>
-                <CartProvider>
-                    <App />
-                </CartProvider>
-            </AuthProvider>
+            <App />
         </BrowserRouter>
     </React.StrictMode>
-)
+);
